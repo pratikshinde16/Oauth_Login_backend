@@ -14,7 +14,7 @@ require("dotenv").config();
 
 app.use(
   session({
-    secret: "Ashvik@16", // Replace with your secret key
+    secret: "asdfg456@456", // Replace with your secret key
     resave: false,
     saveUninitialized: true,
   })
@@ -29,7 +29,7 @@ app.use(
   cors({
     // origin: "*",
     // origin: "http://localhost:3000",
-    origin: "https://oauth-login.netlify.app/",
+    origin: "https://oauth-login.netlify.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
@@ -39,10 +39,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(function (req, res, next) {
   res.header(
     "Access-Control-Allow-Origin",
-    "https://oauth-login.netlify.app/"
+    "https://oauth-login.netlify.app"
   );
   // res.header("Access-Control-Allow-Origin", "http://localhost:3000");
-  // changeOrigin: true,
+  changeOrigin: true,
     res.header(
       "Access-Control-Allow-Headers",
       "Origin, X-Requested-With, Content-Type, Accept"
